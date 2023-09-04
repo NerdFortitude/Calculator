@@ -1,6 +1,12 @@
 import "./Button.css";
 
-function Buttons() {
+function Buttons(props) {
+
+
+  let sin = Math.sin;
+  function submitHandler(){
+      props.setResult("="+eval(props.expression)+"");
+  }
   return (
     <div>
       <div className="top-buttons">
@@ -165,7 +171,7 @@ function Buttons() {
 
           <div className="eualtoplus">
               <button className="plus common">+</button>
-              <button className="equal common">=</button>
+              <button className="equal common" onClick={submitHandler}>=</button>
           </div>
       </div>
 

@@ -9,6 +9,7 @@
 
 
 .expression{
+all: unset;
 color: #818181;
 font-family: "Poppins";
 font-size: 24px;
@@ -24,6 +25,7 @@ margin-left: 167px;
 }
 
 .result{
+all: unset;
 color: #FFF;
 font-family: "Poppins";
 font-size: 48px;

@@ -4,16 +4,20 @@ import Buttons from './components/Buttons'
 import Operations from './components/Operations'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
+  const [expression,setExpression]  =useState("");
+  const [result,setResult] = useState("");
+  
+  
   return (
     <div className='wrapper'>
 
       <div className='container'>
 
-      <Operations></Operations>
+      <Operations expression={expression} setExpression={setExpression} result={result}></Operations>
 
-      <Buttons></Buttons>
+      <Buttons expression={expression} setExpression={setExpression} result = {result} setResult={setResult}></Buttons>
 
       </div>
         

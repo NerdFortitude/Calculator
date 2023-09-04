@@ -1,13 +1,18 @@
 import './Operations.css'
 
-function Operations(){
+function Operations(props){
 
-    return (
-    <div className="operations">
+
+    function updateText(e){
+        props.setExpression((prev)=>{
+            return e.target.value+"";
+        });
+    }
+    return (<div className="operations">
         
-        <div  className="expression" >6000/2+3227*2</div>
+        <input type="text" className="expression" value={props.expression} onChange={updateText}/>
 
-        <div className="result" >=12,454</div>
+        <input type="text" className="result" value={props.result} />
          
     </div>
     
