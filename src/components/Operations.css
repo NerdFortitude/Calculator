@@ -10,7 +10,7 @@
 
 .expression{
 all: unset;
-color: #818181;
+color: white;
 font-family: "Poppins";
 font-size: 24px;
 font-style: normal;
@@ -20,7 +20,8 @@ width: 175px;
 height: 36px;
 margin-top: 138px;
 margin-right: 33px;
-margin-left: 167px;
+width: 95%;
+text-align: end;
 
 }
 
@@ -37,5 +38,6 @@ width: 171px;
 height: 72px;
 margin-top: 6px;
 margin-right: 33px;
-margin-left:171px;
+width: 95%;
+text-align: end;
 }

@@ -7,10 +7,29 @@ function Buttons(props) {
   function submitHandler(){
       props.setResult("="+eval(props.expression)+"");
   }
+
+  function allClearHandler(){
+    props.setExpression(" ");
+    props.setResult(" ");
+    
+
+  }
+
+  function clickHandler(event){
+    
+    props.setExpression((previous)=>{ return previous+event.target.value});
+   
+  }
+
+  function clearHandler(event){
+    props.setExpression((previous)=>{return previous.slice(0,previous.length-1)});
+  }
+
+  
   return (
     <div>
       <div className="top-buttons">
-        <button className="btn">
+        <button className="btn" >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="10"
@@ -23,6 +42,8 @@ function Buttons(props) {
               fill="#29A8FF"
             />
           </svg>
+
+          
         </button>
 
         <button className="btn">
@@ -88,8 +109,8 @@ function Buttons(props) {
       </div>
 
       <div className="secondButtons">
-        <button className="btn2">Ac</button>
-        <button className="btn3">
+        <button className="btn2" onClick={allClearHandler}>Ac</button>
+        <button className="btn3" onClick={clearHandler}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -134,10 +155,10 @@ function Buttons(props) {
 
 
       <div className="thirdButtons">
-        <button className="btn5">7</button>
-        <button className="btn5">8</button>
-        <button className="btn5">9</button>
-        <button className="btn5" id="minus">-</button>
+        <button className="btn5" value="7" onClick={clickHandler}>7</button>
+        <button className="btn5" value="8" onClick={clickHandler}>8</button>
+        <button className="btn5" value="9" onClick={clickHandler}>9</button>
+        <button className="btn5" id="minus" value="-" onClick={clickHandler}>-</button>
       </div>
 
 
@@ -145,23 +166,23 @@ function Buttons(props) {
           <div className="numbers">
                <div className="firstlevel">
                   
-                  <button className="btn5">4</button>
-                  <button className="btn5">5</button>
-                  <button className="btn5">6</button>
+                  <button className="btn5" value="4" onClick={clickHandler}>4</button>
+                  <button className="btn5" value="5" onClick={clickHandler}>5</button>
+                  <button className="btn5" value="6" onClick={clickHandler}>6</button>
                 
                 </div>  
 
                <div className="secondlevel">
                    
-                   <button className="btn5">1</button>
-                   <button className="btn5">2</button>
-                   <button className="btn5">3</button>
+                   <button className="btn5" value="1" onClick={clickHandler}>1</button>
+                   <button className="btn5" value="2" onClick={clickHandler}>2</button>
+                   <button className="btn5" value="3" onClick={clickHandler}>3</button>
 
                 </div> 
 
 
                <div className="thirdlevel">
-                  <button className="btn5" id="zero">0</button>
+                  <button className="btn5" id="zero" value="0" onClick={clickHandler}>0</button>
                   <button className="btn5"><svg xmlns="http://www.w3.org/2000/svg" width="62" height="62" viewBox="0 0 62 62" fill="none">
 <rect width="62" height="62" rx="16" fill="#303136"/>
 <rect x="29" y="29" width="4.5" height="4.5" fill="#109DFF"/>
